@@ -1,0 +1,59 @@
+{% load static %}<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Logsheet</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  </head>
+  <body>
+    <div class="container">
+      <ol class="breadcrumb my-4">
+        <li class="breadcrumb-item active">Boards</li>
+      </ol>
+      <table class="table">
+        <thead class="thead-inverse">
+          <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Type</th>
+            <th>Reg</th>
+            <th>From</th>
+            <th>Pilot</th>
+            <th>Pax</th>
+            <th>Member No</th>
+            <th>Log Stamp</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Type</th>
+            <th>Reg</th>
+            <th>To</th>
+            <th>Pilot</th>
+            <th>Pax</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for logRow in logsheet %}
+            <tr>
+              <td>{{ logRow.logDate }}</td>
+              <td>{{ logRow.logTime }}</td>
+              <td>{{ logRow.logAircraftType }}</td>
+              <td>{{ logRow.logAircraftReg }}</td>
+              <td>{{ logRow.logFrom }}</td>
+              <td>{{ logRow.pilot }}</td>
+              <td>{{ logRow.logPax }}</td>
+              <td class="align-middle">#</td>
+              <td class="align-middle">#</td>
+              <td>{{ logRow.logDate }}</td>
+              <td>{{ logRow.logTime }}</td>
+              <td>{{ logRow.logAircraftType }}</td>
+              <td>{{ logRow.logAircraftReg }}</td>
+              <td>{{ logRow.logTo }}</td>
+              <td>{{ logRow.pilot }}</td>
+              <td>{{ logRow.logPax }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

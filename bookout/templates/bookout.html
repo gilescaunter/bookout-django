@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Book In Aircraft{% endblock %}
+
+{% block breadcrumb %}
+  <li class="breadcrumb-item"><a href="{% url 'home' %}">Bookin</a></li>
+  <li class="breadcrumb-item"><a href="{% url 'bookin' %}">{{ Logsheet.pilot }}</a></li>
+  <li class="breadcrumb-item active">Bookin</li>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="id_pilot">Pilot</label>
+      <input type="text" class="form-control" id="id_pilot" name="pilot">
+    </div>
+    <div class="form-group">
+      <label for="id_logDate">Log Date</label>
+      <input type="text" class="form-control" id="id_logDate" name="logDate">
+    </div>
+     <div class="form-group">
+      <label for="id_logTime">Log Time</label>
+      <input type="text" class="form-control" id="id_logTime" name="logTime">
+    </div>
+      <div class="form-group">
+      <label for="id_logFrom">From</label>
+      <input type="text" class="form-control" id="id_logFrom" name="logFrom">
+    </div>
+      <div class="form-group">
+      <label for="id_logAircraftType">Aircraft Type</label>
+      <input type="text" class="form-control" id="id_logAircraftType" name="logAircraftType">
+    </div>
+
+      <div class="form-group">
+      <label for="id_logAircraftReg">Aircraft Reg</label>
+      <input type="text" class="form-control" id="id_logAircraftReg" name="logAircraftReg">
+    </div>
+      <div class="form-group">
+      <label for="id_logPax"># of Passengers</label>
+      <input type="text" class="form-control" id="id_logPax" name="logPax">
+    </div>
+
+
+    <button type="submit" class="btn btn-success">Post</button>
+  </form>
+{% endblock %}
+
